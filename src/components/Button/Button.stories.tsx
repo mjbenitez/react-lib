@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import { Meta, StoryObj } from "@storybook/react";
 import Button from "./Button";
 
@@ -11,9 +11,12 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = (args) => (
-  <Button data-testId="Button-id" {...args} />
-);
+
+export const Primary: Story = {
+  name: 'I am the primary button',
+  render: (args) => <Button data-testId="Button-id" {...args}/>,
+};
+
 Primary.args = {
   primary: true,
   disabled: false,
@@ -42,8 +45,7 @@ export const Small: Story = (args) => (
   <Button data-testId="Button-id" {...args} />
 );
 Small.args = {
-  primary: true,
-  disabled: false,
+  ...Primary.args,
   size: "small",
   text: "Small",
 };

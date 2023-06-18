@@ -4,8 +4,13 @@ import Button from "./Button";
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  title: "DEMO/Button",
-  argTypes: {},
+  title: "DEMO/ButtonComponent",
+  argTypes: {
+    color: { control: 'color' },
+  },
+  args: {
+    primary: true,
+  },
 };
 export default meta;
 
@@ -21,6 +26,8 @@ Primary.args = {
   primary: true,
   disabled: false,
   text: "Primary",
+  color: "#ffffff"
+
 };
 
 export const Secondary: Story = (args) => (
@@ -30,6 +37,7 @@ Secondary.args = {
   primary: false,
   disabled: false,
   text: "Secondary",
+  color: "#1b116e"
 };
 
 export const Disabled: Story = (args) => (

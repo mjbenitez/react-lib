@@ -4,7 +4,7 @@ import Input from "./Input";
 
 const meta: Meta<typeof Input> = {
   component: Input,
-  title: "DEMO/InputField",
+  title: "DEMO/InputComponent",
   argTypes: {},
 };
 export default meta;

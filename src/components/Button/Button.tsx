@@ -4,7 +4,6 @@ import { ButtonProps } from "./Button.types";
 
 // Assign style properties to the button
 const StyledButton = styled.button<ButtonProps>`
-  border: 0;
   line-height: 1;
   font-size: 15px;
   cursor: pointer;
@@ -18,14 +17,15 @@ const StyledButton = styled.button<ButtonProps>`
       : props.size === "medium"
       ? "9px 30px 11px"
       : "14px 30px 16px"};
-  color: ${(props) => (props.primary ? "#1b116e" : "#ffffff")};
-  background-color: ${(props) => (props.primary ? "#6bedb5" : "#1b116e")};
+  color: ${(props) => (props.color)};
+  background-color: ${(props) => (props.primary ? "#FF4785" : "#ffffff")};
+  border: solid 2px #FF4785;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   &:hover {
-    background-color: ${(props) => (props.primary ? "#55bd90" : "#6bedb5")};
+    background-color: ${(props) => (props.primary ? "#e05181" : "#FF4785")};
   }
   &:active {
-    border: solid 2px #1b116e;
+    border: solid 2px #FF4785;
     padding: ${(props) =>
       props.size === "small"
         ? "5px 23px 6px"
@@ -40,8 +40,8 @@ const Button: React.FC<ButtonProps> = ({
     primary,
     disabled,
     text,
-    onClick,
-    ...props
+    color,
+    onClick
 }) => {
     return(
         <StyledButton
@@ -49,8 +49,8 @@ const Button: React.FC<ButtonProps> = ({
             onClick={onClick}
             primary={primary}
             disabled={disabled}
-            size={size}
-            {...props}>
+            color={color}
+            size={size}>
                 {text}
         </StyledButton>
     );

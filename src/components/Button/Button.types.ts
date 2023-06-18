@@ -6,6 +6,7 @@ export interface ButtonProps {
     text?: string;
     primary?: boolean;
     disabled?: boolean;
+    color?: string;
     size?: 'small' | 'medium' | 'large';
     onClick?: MouseEventHandler<HTMLButtonElement>;  // onClick event tells that the onChange prop is responsible for a mouse event
 

@@ -9,6 +9,8 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    argTypes: { theme: { control: 'select', options: ['light', 'dark'] } },
+    args: { theme: 'dark' },
   },
 };
 

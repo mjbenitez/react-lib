@@ -47,8 +47,7 @@ const Input: FC<InputProps> = ({
   error,
   success,
   onChange,
-  placeholder,
-  ...props
+  placeholder
 }) => {
   return (
     <Fragment>
@@ -64,8 +63,7 @@ const Input: FC<InputProps> = ({
         disabled={disabled}
         error={error}
         success={success}
-        placeholder={placeholder}
-        {...props}></StyledInput>
+        placeholder={placeholder}></StyledInput>
       <StyledMessage>
         <StyledText error={error}>{message}</StyledText>
       </StyledMessage>

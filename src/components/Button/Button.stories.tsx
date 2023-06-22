@@ -5,6 +5,7 @@ import Button from "./Button";
 const meta: Meta<typeof Button> = {
   component: Button,
   title: "DEMO/ButtonComponent",
+  tags: ['autodocs'],
   argTypes: {
     color: { control: 'color' },
   },
@@ -38,6 +39,15 @@ Secondary.args = {
   disabled: false,
   text: "Secondary",
   color: "#1b116e"
+},
+Secondary.parameters = {
+  backgrounds: {
+    values: [
+      { name: 'red', value: '#f00' },
+      { name: 'green', value: '#0f0' },
+      { name: 'blue', value: '#00f' },
+    ],
+  },
 };
 
 export const Disabled: Story = (args) => (
@@ -62,8 +72,7 @@ export const Medium: Story = (args) => (
   <Button data-testId="Button-id" {...args} />
 );
 Medium.args = {
-  primary: true,
-  disabled: false,
+  ...Primary.args,
   size: "medium",
   text: "Medium",
 };
@@ -72,9 +81,7 @@ export const Large: Story = (args) => (
   <Button data-testId="Button-id" {...args} />
 );
 Large.args = {
-  primary: true,
-  disabled: false,
+  ...Primary.args,
   size: "large",
   text: "Large",
 };
-

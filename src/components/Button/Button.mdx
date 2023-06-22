@@ -1,0 +1,18 @@
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+We can display all button stories
+
+Example of a primary button
+<Canvas of={ButtonStories.Primary} />
+Example of a secondary button
+<Canvas of={ButtonStories.Secondary} />
+<Canvas of={ButtonStories.Disabled} />
+<Canvas of={ButtonStories.Small} />
+<Canvas of={ButtonStories.Medium} />
+<Canvas of={ButtonStories.Large} />
